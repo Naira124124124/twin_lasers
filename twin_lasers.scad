@@ -4,21 +4,24 @@ plate_debth = 2.8;
 plate_len = 120;
 plate_width = 33;
 
-rib(rib_debth = 3);
+rib(rib_debth = 3,rib_height = 4);
 
-module rib(rib_debth){
+module rib(rib_debth,rib_height){
     difference(){
-        //scale([1,1,2])
+        scale([1,1,rib_height])
         plate();
         translate([0,0,0])
+        scale([1,1,rib_height])
         cube([plate_width-rib_debth,plate_len,plate_debth+1], center = true);
         
         color("red")
         translate([0,-plate_len/2,0])
+        scale([1,1,rib_height])
         cylinder(h=plate_debth+1, d=plate_width-rib_debth, center = true );
         
         color("green")
         translate([0,plate_len/2,0])
+        scale([1,1,rib_height])
         cylinder(h=plate_debth+1, d=plate_width-rib_debth, center = true );
     }
 }
