@@ -1,5 +1,5 @@
 include <plate_twin_lasers.scad>
-rib(rib_debth = 3,rib_height = 15.5);
+//rib(rib_debth = 3,rib_height = 15.5);
 
 module rib(rib_debth,rib_height){
     difference(){
