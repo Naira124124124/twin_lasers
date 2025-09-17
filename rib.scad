@@ -1,5 +1,20 @@
 include <plate_twin_lasers.scad>
 //rib(rib_debth = 3,rib_height = 15.5);
+difference(){
+rib_center(rib_debth=3, rib_height=25);
+    holes();
+}
+module holes(){
+    translate([0, plate_len/2])
+    cylinder(d1=55, d2=5, h=25+1, center=true);
+    
+    translate([0, -plate_len/2])
+    cylinder(d1=55, d2=5, h=25+1, center=true);
+}
+module rib_center(rib_debth,rib_height){
+
+    cube([rib_debth,,150,rib_height], center = true);
+}
 
 module rib(rib_debth,rib_height){
     difference(){
