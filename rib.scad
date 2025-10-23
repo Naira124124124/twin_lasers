@@ -5,11 +5,11 @@ plate_debth_new = 2.8;
 plate_len = 120;
 plate_width = 33;
 
-//rib_center_set();
+rib_center_set(rib_debth=3, rib_height=5);
 
-module rib_center_set(){
+module rib_center_set(rib_height, rib_debth){
     difference(){
-        rib_center(rib_debth=3, rib_height=25);
+        rib_center(rib_debth, rib_height);
         holes();
     }
 }

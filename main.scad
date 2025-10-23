@@ -11,5 +11,5 @@ plate_width = 33;
 plate(plate_debth_new);
 translate([0,0,-plate_debth_new/2 - rib_height_new/2])
 rib(rib_debth = 3,rib_height = rib_height_new);
-translate([0,0,-plate_debth_new/2 - rib_height_new/2 - 10])
+translate([0,0,-plate_debth_new/2 - rib_height_new/2])
 rib_center_set(rib_debth = 3,rib_height = rib_height_new);
