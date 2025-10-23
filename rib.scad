@@ -14,6 +14,7 @@ module rib_center_set(rib_height, rib_debth){
     }
 }
 module holes(){
+    translate([0,0,-5])
     cylinder(d1=55, d2=5, h=25+1, center=true);
     
     translate([0, plate_len/2])

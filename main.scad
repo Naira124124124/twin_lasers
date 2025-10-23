@@ -1,5 +1,10 @@
 include <plate_twin_lasers.scad>
 use <rib.scad>
+use <nuts.scad>
+
+//d_small_nut = 15;
+//d_big_nut = 24;
+h_nut = 4;
 
 rib_height_new = 4;
 
@@ -7,6 +12,15 @@ rib_height_new = 4;
 plate_debth_new = 2.8;
 plate_len = 120;
 plate_width = 33;
+
+translate([0,0,-h_nut/2+plate_debth_new/2])
+nut_small();
+
+translate([0,-plate_len/2,-h_nut/2-plate_debth_new/2])
+nut_big();
+
+translate([0,plate_len/2,-h_nut/2-plate_debth_new/2])
+nut_big();
 
 plate(plate_debth_new);
 translate([0,0,-plate_debth_new/2 - rib_height_new/2])
