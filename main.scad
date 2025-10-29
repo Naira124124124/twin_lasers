@@ -14,12 +14,15 @@ plate_len = 120;
 plate_width = 33;
 
 translate([0,0,-h_nut/2+plate_debth_new/2])
+color("lime")
 nut_small();
 
 translate([0,-plate_len/2,-h_nut/2-plate_debth_new/2])
+color("blue")
 nut_big();
 
 translate([0,plate_len/2,-h_nut/2-plate_debth_new/2])
+color("blue")
 nut_big();
 
 plate(plate_debth_new);

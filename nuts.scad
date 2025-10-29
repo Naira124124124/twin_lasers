@@ -1,6 +1,6 @@
 d_small_nut = 15;
 d_big_nut = 24;
-h_nut = 4;
+h_nut = 5;
 
 translate([d_big_nut,0,0])
 nut_small();
