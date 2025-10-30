@@ -6,8 +6,11 @@ plate_len = 120;
 plate_width = 33;
 
 //rib(rib_debth = 3,rib_height = 15.5);
-//rib_center_set(rib_debth=3, rib_height=5);
-rib_edge(rib_debth=3,rib_height=4);
+rib_center_set(rib_debth=3, rib_height=5);
+
+
+//rib_edge(rib_debth=3,rib_height=4);
+
 module rib_edge(rib_debth,rib_height){
     difference(){
         rib_center(rib_debth=3, rib_height=5);
@@ -36,6 +39,14 @@ module holes(){
     
     translate([0, -plate_len/2])
     cylinder(d1=55, d2=5, h=25+1, center=true);
+    
+    //remove small prism
+    translate([0,plate_len/2 + plate_width/2 - 3, 1])
+    cube([5,5,5],center=true);
+    
+    //remove small prism
+    translate([0,-plate_len/2 - plate_width/2 + 3, 1])
+    cube([5,5,5],center=true);
 }
 module rib_center(rib_debth,rib_height){
 
